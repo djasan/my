@@ -2,9 +2,11 @@ import ListMenu from '../ListMenu/ListMenu';
 import "./Menu.css";
 const Menu = (props)=>{
     return(
-        <nav>Hello wordl
+        <nav>
 
-            <ListMenu sendEntries= {props.sendEntries}></ListMenu>
+            <ListMenu sendEntries= {props.sendEntries}
+             handleDisplayArticle={props.handleDisplayArticle}
+            ></ListMenu>
         </nav>
     )
 }

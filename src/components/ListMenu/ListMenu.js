@@ -1,20 +1,23 @@
-import React from 'react';
 
-import './ListMenu.css';
+import "./ListMenu.css";
 
-const ListMenu = (props) => (
-  <ul className="ListMenu">
-    {
-      props.sendEntries.map((value, index) => (
-        <a href={value.entry} key={index}>
-          <li>
+const ListeMenu = (props) => {
+  return (
+    <ul className="ListeMenu">
+      {props.sendEntries.map((value, index) => {
+        return (
+          <li
+            /* Un event event ne peut pas etre directement conditionné  */
+            onClick={
+              value.entry === "Article" ? props.handleDisplayArticle : null
+            }
+          >
             {value.entry}
           </li>
-        </a>
-      ))
-    }
-  </ul>
-);
+        );
+      })}
+    </ul>
+  );
+};
 
-
-export default ListMenu;
+export default ListeMenu;
